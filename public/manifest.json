@@ -1,10 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Chrome Extension TypeScript Starter",
-  "description": "Chrome Extension, TypeScript, Visual Studio Code",
-  "version": "1.0",
-
+  "name": "Quickactions",
+  "description": "Quickly whip up a more powerful version of the chrome address bar like Spotlight on mac.",
+  "version": "0.1",
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
@@ -14,20 +13,26 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
-
   "content_scripts": [
-      {
-          "matches": ["<all_urls>"],
-          "js": ["js/vendor.js", "js/content_script.js"]
-      }
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/vendor.js", "js/content_script.js"]
+    }
   ],
 
   "background": {
-    "scripts": ["js/vendor.js", "js/background.js"]
+    "scripts": ["js/vendor.js", "js/background.js"],
+    "persistent": true
+  },
+  "commands": {
+    "Command+Shift+P": {
+      "suggested_key": {
+        "default": "Ctrl+M",
+        "mac": "Command+M"
+      },
+      "description": "Toggle feature foo"
+    }
   },
 
-  "permissions": [
-    "storage",
-    "<all_urls>"
-  ]
+  "permissions": ["storage", "<all_urls>"]
 }

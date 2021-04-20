@@ -25,6 +25,8 @@ const Popup = () => {
             color: "#555555",
           },
           (msg) => {
+            // const h = require('preact-compat')
+            // console.log('h', h('a', 'test'))
             console.log("result message:", msg);
           }
         );

@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-typescript-starter",
+  "name": "chrome-extension-quickactions",
   "version": "1.0.0",
-  "description": "chrome-extension-typescript-starter",
+  "description": "chrome-extension-quickactions",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --config webpack/webpack.dev.js --watch",
@@ -17,8 +17,14 @@
     "url": "https://github.com/chibat/chrome-extension-typescript-starter.git"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "preact": "^10.5.13",
+    "preact-compat": "^3.19.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "alias": {
+    "react": "preact-compat",
+    "react-dom": "preact-compat"
   },
   "devDependencies": {
     "@types/chrome": "0.0.100",
